@@ -103,3 +103,4 @@ def getSets(fileFake, fileClean):
 
 testSet, testTarget, trainSet, trainTarget = getSets(fake, real)[2:]
 
+print testSet.shape
