@@ -40,3 +40,10 @@ def part_7():
     plt.ylabel('accuracy of test set')
     plt.title('DT with entropy')
     plt.plot(depths, result)
+    
+    # this is for part 8
+    trump = features.index('trump')
+    trumpList = trainSet[:,trump]
+    print "total headlines:", len(trumpList)
+    print "fake news contains trump", sum(trumpList[:808])
+    print "real news contains trump", sum(trumpList[808:])
