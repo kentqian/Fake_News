@@ -50,6 +50,9 @@ def tune_performance_part2(real_train, real_vali, real_test, fake_train, fake_va
 	index_max = np.argmax(accuracy_list)
 	print "Final Pick: " + mp_list[index_max]
 
+
+
+
 # print '========real_news========='
 real_train, real_vali, real_test, real_total_news, real_total = part_1("clean_real.txt")
 # print '========fake_news========='
@@ -63,6 +66,8 @@ fake_train, fake_vali, fake_test, fake_total_news, fake_total = part_1("clean_fa
 
 # part_3(real_total_news, fake_total_news, real_total, fake_total, 1000, 0.001, 'b')
 
-part_7()
+part_4()
+
+# part_7()
 
 
