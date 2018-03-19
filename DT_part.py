@@ -1,14 +1,14 @@
 import numpy as np
-import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 from sklearn.externals.six import StringIO
-from IPython.display import Image
 import pydotplus
 import matplotlib.pyplot as plt
 
+from data_gain import getSets
 
-def part7(depth, trainSet, trainLable, testSet, testLable, features, picName):
+
+def decision_tree(depth, trainSet, trainLable, testSet, testLable, features, picName):
     # train the decision tree
     clf = DecisionTreeClassifier(criterion="entropy" ,max_depth=depth)
     clf.fit(trainSet, trainLable)
@@ -26,12 +26,15 @@ def part7(depth, trainSet, trainLable, testSet, testLable, features, picName):
     return 1-sum(result)/490.0
 
 
-if __name__ == "__main__":
+def part_7():
+    fake = open("clean_fake.txt", 'r')
+    real = open("clean_real.txt", 'r')
+
     testSet, testTarget, trainSet, trainTarget, features = getSets(fake, real)[2:]
     depths = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     result = []
     for i in depths:
-        accuracy = part7(i, trainSet, trainTarget, testSet, testTarget, features, 'tree' + str(i) + '.png')
+        accuracy = decision_tree(i, trainSet, trainTarget, testSet, testTarget, features, 'tree' + str(i) + '.png')
         result.append(accuracy)
     plt.xlabel('max depths')
     plt.ylabel('accuracy of test set')

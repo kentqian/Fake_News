@@ -1,8 +1,4 @@
 import numpy as np
-import pandas as pd
-from sklearn.datasets import load_iris
-from sklearn.model_selection import cross_val_score
-from sklearn.tree import DecisionTreeClassifier
 
 fake = open("clean_fake.txt", 'r')
 real = open("clean_real.txt", 'r')

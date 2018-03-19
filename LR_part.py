@@ -71,10 +71,11 @@ class LogisticRegression(nn.Module):
         out = self.linear(x)
         return out
 
-vali_matrix, vali_label, test_matrix, test_label, training_matrix, training_label, total_words = getSets(fake, real)
 
 if __name__ == '__main__':
 
+	vali_matrix, vali_label, test_matrix, test_label, training_matrix, training_label, total_words = getSets(fake, real)
+	
 	print "==============Data Ready==============="
 
 	model = LogisticRegression(training_matrix.shape[1],2)
