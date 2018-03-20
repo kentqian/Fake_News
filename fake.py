@@ -1,6 +1,6 @@
 import random
 from NB_part import part_2, part_3
-from LR_part import *
+from LR_part import part_4, part_6
 from DT_part import part_7
 
 def part_1(input):
@@ -51,12 +51,10 @@ def tune_performance_part2(real_train, real_vali, real_test, fake_train, fake_va
 	print "Final Pick: " + mp_list[index_max]
 
 
-
-
 # print '========real_news========='
-real_train, real_vali, real_test, real_total_news, real_total = part_1("clean_real.txt")
+# real_train, real_vali, real_test, real_total_news, real_total = part_1("clean_real.txt")
 # print '========fake_news========='
-fake_train, fake_vali, fake_test, fake_total_news, fake_total = part_1("clean_fake.txt")
+# fake_train, fake_vali, fake_test, fake_total_news, fake_total = part_1("clean_fake.txt")
 
 # tune_performance_part2(real_train, real_vali, real_test, fake_train, fake_vali, fake_test)
 
@@ -66,8 +64,11 @@ fake_train, fake_vali, fake_test, fake_total_news, fake_total = part_1("clean_fa
 
 # part_3(real_total_news, fake_total_news, real_total, fake_total, 1000, 0.001, 'b')
 
-part_4()
+model, total_words = part_4()
+part_6(model, total_words,'a')
+# part_6(model, total_words,'b')
 
 # part_7()
+
 
 
